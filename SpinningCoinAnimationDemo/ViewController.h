@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CAAnimationDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
@@ -16,7 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *spinButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
+
 - (IBAction)pressSpin:(id)sender;
+
 
 @end
 

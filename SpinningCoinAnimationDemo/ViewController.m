@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
+
+@property NSNumber *numToDisplay;
 
 @end
 
@@ -27,6 +30,8 @@
 
 -(void)setupView {
     
+    [self hideNumber];
+    
     [self.contentView setBackgroundColor:UIColor.blueColor];
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -40,5 +45,46 @@
 }
 
 - (IBAction)pressSpin:(id)sender {
+    [self hideNumber];
+    [self performSpinAnimation];
 }
+
+-(void)performSpinAnimation
+{
+    CATransition* transition = [CATransition animation];
+    transition.delegate = self;
+    transition.startProgress = 0;
+    transition.endProgress = 1.0;
+    transition.type = @"flip";
+    transition.subtype = @"fromRight";
+    transition.duration = 0.45;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    float randomNumThreeToSeven = roundf((((float)rand() / RAND_MAX) * 4) + 3);
+    [self setNumToDisplay:[NSNumber numberWithFloat:randomNumThreeToSeven]];
+    transition.repeatCount = randomNumThreeToSeven;
+
+    [self.coinImage.layer addAnimation:transition forKey:@"transition"];
+    
+}
+
+-(void)displayNumber:(NSNumber*)number
+{
+    [UIView animateWithDuration:1 delay:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        NSString *label = [NSString stringWithFormat:@"%@",number];
+        [self.numberLabel setAlpha: 1];
+        [self.numberLabel setText:label];
+    } completion:nil];
+}
+
+-(void)hideNumber
+{
+    [self.numberLabel setAlpha:0];
+    [self.numberLabel setText:@""];
+}
+
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+    [self displayNumber:self.numToDisplay];
+}
+
 @end

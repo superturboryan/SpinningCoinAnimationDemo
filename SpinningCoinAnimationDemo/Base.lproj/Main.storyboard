@@ -40,6 +40,12 @@
                                             <action selector="pressSpin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EmH-jX-LTv"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyU-Ua-0pl">
+                                        <rect key="frame" x="176.5" y="299" width="22" height="50"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -47,7 +53,9 @@
                                     <constraint firstItem="yXb-pq-kfI" firstAttribute="top" secondItem="Dgv-3J-BqF" secondAttribute="top" constant="-34" id="EnT-pg-vsU"/>
                                     <constraint firstItem="yXb-pq-kfI" firstAttribute="centerX" secondItem="Dgv-3J-BqF" secondAttribute="centerX" id="Q40-ap-akV"/>
                                     <constraint firstItem="L5U-uJ-63h" firstAttribute="centerX" secondItem="Dgv-3J-BqF" secondAttribute="centerX" id="eBO-wv-yox"/>
+                                    <constraint firstItem="VyU-Ua-0pl" firstAttribute="centerX" secondItem="Dgv-3J-BqF" secondAttribute="centerX" id="vHF-he-L4D"/>
                                     <constraint firstItem="yXb-pq-kfI" firstAttribute="top" secondItem="Dgv-3J-BqF" secondAttribute="top" constant="-34" id="yBO-UH-AYD"/>
+                                    <constraint firstItem="VyU-Ua-0pl" firstAttribute="top" secondItem="Dgv-3J-BqF" secondAttribute="top" constant="299" id="zWV-dP-wYr"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -63,6 +71,7 @@
                     <connections>
                         <outlet property="coinImage" destination="yXb-pq-kfI" id="jAP-q4-19b"/>
                         <outlet property="contentView" destination="Dgv-3J-BqF" id="Iig-OS-y2n"/>
+                        <outlet property="numberLabel" destination="VyU-Ua-0pl" id="E7i-1r-7YP"/>
                         <outlet property="spinButton" destination="L5U-uJ-63h" id="WRW-U4-kaE"/>
                     </connections>
                 </viewController>
