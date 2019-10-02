@@ -10,6 +10,13 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *coinImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *spinButton;
+
+- (IBAction)pressSpin:(id)sender;
 
 @end
 
